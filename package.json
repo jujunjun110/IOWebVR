@@ -1,8 +1,14 @@
 {
-  "name": "io_sample",
-  "version": "1.0.0",
-  "description": "sample program for 月間I/O",
-  "main": "index.js",
-  "author": "Jun Ito <jun_ito@voyagegroup.com>",
-  "license": "MIT"
+    "name": "io_sample",
+    "version": "1.0.0",
+    "description": "sample program for 月間I/O",
+    "scripts": {
+        "dev": "budo --live --open"
+    },
+    "main": "index.js",
+    "author": "Jun Ito <jun_ito@voyagegroup.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "budo": "^9.4.7"
+    }
 }

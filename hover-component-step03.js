@@ -1,31 +1,27 @@
-if (typeof AFRAME === 'undefined') {
-    throw new Error('Component attempted to register before AFRAME was available.')
-}
-
 AFRAME.registerComponent('hover', {
     schema: {
-        toColor: {
+        hoveredColor: {
             type: 'color',
             default: 'green'
         }
     },
     init: function () {
         var el = this.el;
-        var toColor = this.data.toColor;
+        var hoveredColor = this.data.hoveredColor;
         var defaultColor = el.getAttribute('color')
-        var canIntersect = true;
+        var shouldChangeColor = true;
 
         el.addEventListener('raycaster-intersected', function () {
-            if (!canIntersect) {
+            if (!shouldChangeColor) {
                 return;
             }
-            el.setAttribute('color', toColor);
-            canIntersect = false;
+            el.setAttribute('color', hoveredColor);
+            shouldChangeColor = false;
         })
 
         el.addEventListener('raycaster-intersected-cleared', function () {
             el.setAttribute('color', defaultColor);
-            canIntersect = true;
+            shouldChangeColor = true;
         })
     }
 });

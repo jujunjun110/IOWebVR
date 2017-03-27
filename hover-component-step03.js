@@ -8,7 +8,7 @@ AFRAME.registerComponent('hover', {
     init: function () {
         var el = this.el;
         var hoveredColor = this.data.hoveredColor;
-        var defaultColor = el.getAttribute('color')
+        var defaultColor = el.getAttribute('color');
         var shouldChangeColor = true;
 
         el.addEventListener('raycaster-intersected', function () {

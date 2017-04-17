@@ -2,7 +2,7 @@ AFRAME.registerComponent('hover', {
     schema: {
         hoveredColor: {
             type: 'color',
-            default: 'green'
+            default: 'red'
         }
     },
     init: function () {
